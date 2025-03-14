@@ -22,6 +22,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/about') }}">About</a>
                 </li>
+                <nav>
+    <ul>
+        @if (Auth::check())
+            <!-- Show logout link when authenticated -->
+            <li><a href="{{ route('logout') }}">Logout</a></li>
+        @else
+            <!-- Show login link when not authenticated -->
+            <li><a href="{{ route('login') }}">Login</a></li>
+        @endif
+    </ul>
+</nav>
             </ul>
         </div>
     </div>
